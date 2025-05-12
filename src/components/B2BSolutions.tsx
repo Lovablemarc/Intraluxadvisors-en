@@ -3,14 +3,14 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { getText } from "@/lib/translations";
 import SectionTitle from "./SectionTitle";
 import GoldButton from "./GoldButton";
-import { OfficeBuilding, Clock, Users, Api } from "lucide-react";
+import { Building2, Clock, Users, Cylinder } from "lucide-react";
 
 export default function B2BSolutions() {
   const { language } = useLanguage();
 
   const features = [
     {
-      icon: <OfficeBuilding className="w-12 h-12 text-gold" />,
+      icon: <Building2 className="w-12 h-12 text-gold" />,
       titleKey: "b2b_portal",
     },
     {
@@ -22,7 +22,7 @@ export default function B2BSolutions() {
       titleKey: "b2b_support",
     },
     {
-      icon: <Api className="w-12 h-12 text-gold" />,
+      icon: <Cylinder className="w-12 h-12 text-gold" />,
       titleKey: "b2b_api",
     },
   ];

@@ -3,26 +3,26 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { getText } from "@/lib/translations";
 import SectionTitle from "./SectionTitle";
 import GoldButton from "./GoldButton";
-import { FilePdf, FileExcel, FileQuestion } from "lucide-react";
+import { FileText, FileSpreadsheet, HelpCircle } from "lucide-react";
 
 export default function ResourcesSection() {
   const { language } = useLanguage();
 
   const resources = [
     {
-      icon: <FilePdf className="w-16 h-16 text-gold" />,
+      icon: <FileText className="w-16 h-16 text-gold" />,
       titleKey: "resources_pdf",
       buttonKey: "resources_download",
       link: "#",
     },
     {
-      icon: <FileExcel className="w-16 h-16 text-gold" />,
+      icon: <FileSpreadsheet className="w-16 h-16 text-gold" />,
       titleKey: "resources_excel",
       buttonKey: "resources_download",
       link: "#",
     },
     {
-      icon: <FileQuestion className="w-16 h-16 text-gold" />,
+      icon: <HelpCircle className="w-16 h-16 text-gold" />,
       titleKey: "resources_faq",
       buttonKey: "resources_view",
       link: "#",

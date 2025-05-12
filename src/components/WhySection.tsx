@@ -2,14 +2,14 @@
 import { useLanguage } from "@/lib/LanguageContext";
 import { getText } from "@/lib/translations";
 import SectionTitle from "./SectionTitle";
-import { LegalDocument, Map, ArrowsUpFromLine } from "lucide-react";
+import { FileCheck, Map, ArrowsUpFromLine } from "lucide-react";
 
 export default function WhySection() {
   const { language } = useLanguage();
 
   const reasons = [
     {
-      icon: <LegalDocument size={48} className="text-gold mb-4" />,
+      icon: <FileCheck size={48} className="text-gold mb-4" />,
       titleKey: "why_legal_title",
       descKey: "why_legal_desc",
     },
