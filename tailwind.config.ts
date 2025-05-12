@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,9 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				gold: '#D4AF37',
+				darkText: '#333333',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +87,28 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				'shimmer': {
+					'0%': {
+						backgroundPosition: '-40rem 0',
+					},
+					'100%': {
+						backgroundPosition: '40rem 0',
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'shimmer': 'shimmer 2s infinite linear',
+			},
+			backgroundImage: {
+				'gold-shimmer': 'linear-gradient(90deg, rgba(212,175,55,0) 0%, rgba(212,175,55,0.2) 20%, rgba(212,175,55,0.5) 50%, rgba(212,175,55,0.2) 80%, rgba(212,175,55,0) 100%)',
+			},
+			fontFamily: {
+				'playfair': ['"Playfair Display"', 'serif'],
+				'opensans': ['"Open Sans"', 'sans-serif'],
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
