@@ -89,6 +89,18 @@ Best regards,
                   <p>2A Rue des Capucins</p>
                   <p>1313 Ville-Haute</p>
                   <p>Luxembourg</p>
+                  <div className="mt-2 space-y-1">
+                    <p>
+                      <a href="mailto:info@intraluxadvisors.com" className="text-gold hover:underline">
+                        info@intraluxadvisors.com
+                      </a>
+                    </p>
+                    <p>
+                      <a href="tel:+352691486875" className="text-gold hover:underline">
+                        Tel: +352 691 486 875
+                      </a>
+                    </p>
+                  </div>
                 </div>
               </div>
               
