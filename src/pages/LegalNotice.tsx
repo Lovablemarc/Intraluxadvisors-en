@@ -1,8 +1,17 @@
 import { useLanguage } from "@/lib/LanguageContext";
+import { LanguageProvider } from "@/lib/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function LegalNotice() {
+  return (
+    <LanguageProvider>
+      <LegalNoticeContent />
+    </LanguageProvider>
+  );
+}
+
+function LegalNoticeContent() {
   const { language } = useLanguage();
 
   return (
