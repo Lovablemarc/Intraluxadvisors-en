@@ -3,7 +3,7 @@ import { getText } from "@/lib/translations";
 import SectionTitle from "./SectionTitle";
 import { cn } from "@/lib/utils";
 import GoldButton from "./GoldButton";
-import { FileCheck, Database, ClipboardCheck, Send } from "lucide-react";
+import { FileCheck, Upload, ClipboardCheck, Send } from "lucide-react";
 
 export default function ProcessSection() {
   const { language } = useLanguage();
@@ -16,49 +16,49 @@ export default function ProcessSection() {
     {
       number: 1,
       icon: <FileCheck className="w-12 h-12 text-gold" />,
-      titleKey: "process_step1_title",
-      descKey: "process_step1_desc",
+      title: "Initial Setup",
+      description: "Quick onboarding process to understand your needs",
       details: [
-        "Initial consultation",
-        "System access setup",
-        "Data flow configuration",
-        "Team onboarding"
+        "Free consultation call",
+        "Requirements gathering",
+        "Process explanation",
+        "Timeline planning"
       ]
     },
     {
       number: 2,
-      icon: <Database className="w-12 h-12 text-gold" />,
-      titleKey: "process_step2_title",
-      descKey: "process_step2_desc",
+      icon: <Upload className="w-12 h-12 text-gold" />,
+      title: "Data Submission",
+      description: "Simple and secure data transfer",
       details: [
-        "Automated data extraction",
-        "Real-time validation",
-        "Error detection",
-        "Data enrichment"
+        "Flexible file formats accepted",
+        "Secure storage link provided",
+        "Email submission option",
+        "Data verification"
       ]
     },
     {
       number: 3,
       icon: <ClipboardCheck className="w-12 h-12 text-gold" />,
-      titleKey: "process_step3_title",
-      descKey: "process_step3_desc",
+      title: "Processing & Preparation",
+      description: "Expert handling of your Intrastat data",
       details: [
-        "Draft review",
-        "Quick approval process",
-        "Secure portal access",
-        "Real-time updates"
+        "Data validation",
+        "Commodity code verification",
+        "Compliance check",
+        "Declaration preparation"
       ]
     },
     {
       number: 4,
       icon: <Send className="w-12 h-12 text-gold" />,
-      titleKey: "process_step4_title",
-      descKey: "process_step4_desc",
+      title: "Filing & Confirmation",
+      description: "Timely submission to authorities",
       details: [
-        "Automated submission",
-        "Instant confirmation",
-        "Digital archiving",
-        "Compliance tracking"
+        "Official submission",
+        "Filing confirmation",
+        "Documentation provided",
+        "Monthly report"
       ]
     },
   ];
@@ -67,8 +67,8 @@ export default function ProcessSection() {
     <section id="process" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <SectionTitle 
-          title={getText("process_title", language)}
-          subtitle="Simple, efficient, and fully compliant process"
+          title="Simple 4-Step Process"
+          subtitle="Hassle-free Intrastat compliance without complex integrations"
         />
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -85,11 +85,11 @@ export default function ProcessSection() {
               </div>
               
               <h3 className="text-xl font-semibold mb-3">
-                {getText(step.titleKey, language)}
+                {step.title}
               </h3>
               
               <p className="text-gray-600 mb-4">
-                {getText(step.descKey, language)}
+                {step.description}
               </p>
               
               <ul className="space-y-2">
@@ -106,10 +106,10 @@ export default function ProcessSection() {
 
         <div className="text-center">
           <p className="text-lg mb-6">
-            Ready to streamline your Intrastat compliance?
+            Ready to simplify your Intrastat reporting?
           </p>
           <GoldButton onClick={openCalendly} className="text-lg">
-            Schedule Your Free Process Review
+            Book Your Free Consultation
           </GoldButton>
         </div>
       </div>
