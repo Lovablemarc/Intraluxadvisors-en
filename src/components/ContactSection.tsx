@@ -1,4 +1,3 @@
-
 import { useLanguage } from "@/lib/LanguageContext";
 import { getText } from "@/lib/translations";
 import SectionTitle from "./SectionTitle";
@@ -14,7 +13,7 @@ export default function ContactSection() {
     email: "",
     phone: "",
     invoices: "",
-    lines: "",
+    items: "",
     yearly: "",
     message: "",
   });
@@ -39,7 +38,7 @@ export default function ContactSection() {
       email: "",
       phone: "",
       invoices: "",
-      lines: "",
+      items: "",
       yearly: "",
       message: "",
     });
@@ -117,7 +116,7 @@ export default function ContactSection() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 <div>
                   <label htmlFor="invoices" className="block text-sm font-medium text-gray-700 mb-1">
-                    {getText("contact_invoices", language)}
+                    Monthly Invoices
                   </label>
                   <input
                     type="number"
@@ -129,21 +128,21 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="lines" className="block text-sm font-medium text-gray-700 mb-1">
-                    {getText("contact_lines", language)}
+                  <label htmlFor="items" className="block text-sm font-medium text-gray-700 mb-1">
+                    Items per Invoice (avg)
                   </label>
                   <input
                     type="number"
-                    id="lines"
-                    name="lines"
+                    id="items"
+                    name="items"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
-                    value={formData.lines}
+                    value={formData.items}
                     onChange={handleChange}
                   />
                 </div>
                 <div>
                   <label htmlFor="yearly" className="block text-sm font-medium text-gray-700 mb-1">
-                    {getText("contact_yearly", language)}
+                    Estimated Items/Year
                   </label>
                   <input
                     type="number"
