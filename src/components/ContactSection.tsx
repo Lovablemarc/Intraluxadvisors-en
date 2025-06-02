@@ -210,7 +210,7 @@ ${formData.message}
                 </div>
               </div>
               
-              <div className="space-y-2 text-gray-700">
+              <div className="space-y-4 text-gray-700">
                 <p className="font-semibold">IntraLux Advisors</p>
                 <p>2A Rue des Capucins, 1313 Ville-Haute Luxembourg</p>
                 <p>Tel: +352 691 486 875</p>
@@ -219,6 +219,16 @@ ${formData.message}
                     info@intraluxadvisors.com
                   </a>
                 </p>
+                <div className="pt-4 border-t border-gray-200">
+                  <p className="font-semibold mb-2">Languages We Speak:</p>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Luxembourgish (Lëtzebuergesch)</li>
+                    <li>French (Français)</li>
+                    <li>German (Deutsch)</li>
+                    <li>English</li>
+                    <li>Spanish (Español)</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
