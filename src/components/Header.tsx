@@ -4,23 +4,27 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useState, useEffect } from "react";
 import Logo from "./Logo";
 import { Linkedin } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 interface NavItem {
   id: string;
   key: string;
+  path: string;
 }
 
 export default function Header() {
   const { language } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/" || location.pathname === "/en";
 
   const navItems: NavItem[] = [
-    { id: "why", key: "nav_intrastat" },
-    { id: "process", key: "nav_process" },
-    { id: "b2b", key: "nav_b2b" },
-    { id: "resources", key: "nav_resources" },
-    { id: "contact", key: "nav_contact" },
+    { id: "why", key: "nav_intrastat", path: "/en#why" },
+    { id: "process", key: "nav_process", path: "/en#process" },
+    { id: "b2b", key: "nav_b2b", path: "/en#b2b" },
+    { id: "resources", key: "nav_resources", path: "/en#resources" },
+    { id: "contact", key: "nav_contact", path: "/en#contact" },
   ];
 
   useEffect(() => {
@@ -36,18 +40,25 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (path: string) => {
+    if (!isHomePage) {
+      window.location.href = path;
+    }
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+        scrolled ? "bg-white shadow-md py-2" : "bg-white py-4"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <a href="#" className="flex items-center py-4">
+            <Link to="/en" className="flex items-center py-4">
               <Logo />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -56,7 +67,13 @@ export default function Header() {
               {navItems.map((item) => (
                 <a
                   key={item.id}
-                  href={`#${item.id}`}
+                  href={item.path}
+                  onClick={(e) => {
+                    if (!isHomePage) {
+                      e.preventDefault();
+                      window.location.href = item.path;
+                    }
+                  }}
                   className="text-darkText hover:text-gold transition-colors"
                 >
                   {getText(item.key, language)}
@@ -130,9 +147,12 @@ export default function Header() {
               {navItems.map((item) => (
                 <a
                   key={item.id}
-                  href={`#${item.id}`}
+                  href={item.path}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.path);
+                  }}
                   className="block py-2 text-darkText hover:text-gold transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {getText(item.key, language)}
                 </a>
