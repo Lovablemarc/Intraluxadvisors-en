@@ -26,10 +26,31 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // In a real implementation, you would send this data to your backend
-    console.log("Form submitted:", formData);
+    // Create email body with form data
+    const emailBody = `
+New Intrastat Service Request
+
+Company: ${formData.company}
+Contact Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Volume Information:
+- Monthly Invoices: ${formData.invoices}
+- Items per Invoice: ${formData.items}
+- Estimated Yearly Items: ${formData.yearly}
+
+Additional Message:
+${formData.message}
+    `.trim();
+
+    // Create mailto link
+    const mailtoLink = `mailto:marcparisotto@gmail.com?subject=Intrastat Service Request - ${formData.company}&body=${encodeURIComponent(emailBody)}`;
+
+    // Open email client
+    window.location.href = mailtoLink;
     
-    toast.success("Your request has been submitted. We'll get back to you soon!");
+    toast.success("Opening your email client to send the request");
     
     // Reset form
     setFormData({
