@@ -1,4 +1,3 @@
-
 export type Language = 'en' | 'fr' | 'de';
 
 interface Translations {
@@ -44,19 +43,130 @@ export const translations: Translations = {
     de: "Intrastat-Dienstleistungen Luxemburg",
   },
   hero_subtitle: {
-    en: "Fast, reliable compliance for your intra-EU trade",
-    fr: "Conformité rapide et fiable pour vos échanges intra-UE",
-    de: "Schnelle, zuverlässige Einhaltung für Ihren inner-europäischen Handel",
+    en: "Save €12,000+ Annually While Ensuring 100% Compliance",
+    fr: "Économisez plus de 12 000 € par an avec une conformité à 100%",
+    de: "Sparen Sie jährlich über 12.000 € bei 100% Compliance",
   },
-  cta_quote: {
-    en: "Request a Quote",
-    fr: "Demander un devis",
-    de: "Devis anfordern",
+  hero_savings_title: {
+    en: "Average Penalty per Violation",
+    fr: "Pénalité moyenne par infraction",
+    de: "Durchschnittliche Strafe pro Verstoß",
   },
-  cta_learn: {
-    en: "Learn More",
-    fr: "En savoir plus",
-    de: "Mehr erfahren",
+  hero_time_title: {
+    en: "Time Saved per Month",
+    fr: "Temps économisé par mois",
+    de: "Zeitersparnis pro Monat",
+  },
+  hero_cost_title: {
+    en: "Monthly Labor Cost Savings",
+    fr: "Économies mensuelles de coûts salariaux",
+    de: "Monatliche Personalkosteneinsparung",
+  },
+  cta_discovery: {
+    en: "Book Your Free Discovery Call",
+    fr: "Réservez votre appel découverte gratuit",
+    de: "Buchen Sie Ihr kostenloses Erstgespräch",
+  },
+  cta_roi: {
+    en: "Calculate Your ROI",
+    fr: "Calculez votre ROI",
+    de: "Berechnen Sie Ihren ROI",
+  },
+
+  // ROI Section
+  roi_title: {
+    en: "Your Return on Investment",
+    fr: "Votre retour sur investissement",
+    de: "Ihre Kapitalrendite",
+  },
+  roi_subtitle: {
+    en: "See how much you can save with our service",
+    fr: "Découvrez combien vous pouvez économiser avec notre service",
+    de: "Sehen Sie, wie viel Sie mit unserem Service sparen können",
+  },
+  roi_without_title: {
+    en: "Without Our Service",
+    fr: "Sans notre service",
+    de: "Ohne unseren Service",
+  },
+  roi_with_title: {
+    en: "With Our Service",
+    fr: "Avec notre service",
+    de: "Mit unserem Service",
+  },
+  roi_processing_time: {
+    en: "Internal Processing Time",
+    fr: "Temps de traitement interne",
+    de: "Interne Bearbeitungszeit",
+  },
+  roi_error_rate: {
+    en: "Risk of Penalties",
+    fr: "Risque de pénalités",
+    de: "Strafrisiko",
+  },
+  roi_annual_cost: {
+    en: "Annual Processing Cost",
+    fr: "Coût annuel de traitement",
+    de: "Jährliche Bearbeitungskosten",
+  },
+  roi_review_time: {
+    en: "Client Review Time",
+    fr: "Temps de révision client",
+    de: "Prüfungszeit für Kunden",
+  },
+  roi_compliance: {
+    en: "100% Compliance Guaranteed",
+    fr: "Conformité 100% garantie",
+    de: "100% Compliance garantiert",
+  },
+  roi_annual_savings: {
+    en: "Annual Savings",
+    fr: "Économies annuelles",
+    de: "Jährliche Einsparungen",
+  },
+
+  // Guarantees Section
+  guarantees_title: {
+    en: "Our Service Guarantees",
+    fr: "Nos garanties de service",
+    de: "Unsere Service-Garantien",
+  },
+  guarantees_subtitle: {
+    en: "Backed by years of excellence in Intrastat compliance",
+    fr: "Soutenu par des années d'excellence en conformité Intrastat",
+    de: "Gestützt auf jahrelange Exzellenz in der Intrastat-Compliance",
+  },
+  guarantee_compliance: {
+    en: "100% Compliance",
+    fr: "Conformité 100%",
+    de: "100% Compliance",
+  },
+  guarantee_time: {
+    en: "Time Savings",
+    fr: "Gain de temps",
+    de: "Zeitersparnis",
+  },
+  guarantee_quality: {
+    en: "Expert Quality",
+    fr: "Qualité expert",
+    de: "Expertenqualität",
+  },
+  guarantee_satisfaction: {
+    en: "Client Satisfaction",
+    fr: "Satisfaction client",
+    de: "Kundenzufriedenheit",
+  },
+
+  // Limited Time Offer
+  limited_offer: {
+    en: "Limited Time Offer",
+    fr: "Offre limitée dans le temps",
+    de: "Zeitlich begrenztes Angebot",
+  },
+  setup_slots: {
+    en: "Setup slots available this month only • Currently accepting 25 new clients",
+    fr: "Places disponibles ce mois-ci uniquement • Accepte actuellement 25 nouveaux clients",
+    de: "Einrichtungsplätze nur diesen Monat verfügbar • Aktuell werden 25 neue Kunden aufgenommen",
   },
 
   // Why Section
