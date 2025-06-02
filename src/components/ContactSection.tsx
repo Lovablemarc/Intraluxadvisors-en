@@ -3,21 +3,10 @@ import { getText } from "@/lib/translations";
 import SectionTitle from "./SectionTitle";
 import GoldButton from "./GoldButton";
 import { toast } from "sonner";
-import { useState } from "react";
 
 export default function ContactSection() {
   const { language } = useLanguage();
-  const [formData, setFormData] = useState({
-    company: "",
-    name: "",
-    email: "",
-    phone: "",
-    invoices: "",
-    items: "",
-    yearly: "",
-    message: "",
-  });
-  
+
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
@@ -33,7 +22,7 @@ export default function ContactSection() {
               <input type="hidden" name="recipient" value="info@intraluxadvisors.com" />
               <input type="hidden" name="subject" value="Contact Form Submission" />
               <input type="hidden" name="redirect" value="https://intraluxadvisors.com" />
-              <input type="hidden" name="required" value="name,email,message" />
+              <input type="hidden" name="required" value="company,name,email,message" />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
@@ -45,7 +34,7 @@ export default function ContactSection() {
                     id="company"
                     name="company"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
-                    value={formData.company}
+                    required
                   />
                 </div>
                 <div>
@@ -58,7 +47,6 @@ export default function ContactSection() {
                     name="name"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
                     required
-                    value={formData.name}
                   />
                 </div>
               </div>
@@ -74,7 +62,6 @@ export default function ContactSection() {
                     name="email"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
                     required
-                    value={formData.email}
                   />
                 </div>
                 <div>
@@ -86,7 +73,6 @@ export default function ContactSection() {
                     id="phone"
                     name="phone"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
-                    value={formData.phone}
                   />
                 </div>
               </div>
@@ -101,7 +87,6 @@ export default function ContactSection() {
                     id="invoices"
                     name="invoices"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
-                    value={formData.invoices}
                   />
                 </div>
                 <div>
@@ -113,7 +98,6 @@ export default function ContactSection() {
                     id="items"
                     name="items"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
-                    value={formData.items}
                   />
                 </div>
                 <div>
@@ -125,7 +109,6 @@ export default function ContactSection() {
                     id="yearly"
                     name="yearly"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
-                    value={formData.yearly}
                   />
                 </div>
               </div>
@@ -140,7 +123,6 @@ export default function ContactSection() {
                   rows={4}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
                   required
-                  value={formData.message}
                 ></textarea>
               </div>
               
