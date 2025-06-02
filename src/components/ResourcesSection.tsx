@@ -12,21 +12,35 @@ export default function ResourcesSection() {
       icon: <FileText className="w-16 h-16 text-gold" />,
       titleKey: "resources_pdf",
       buttonKey: "resources_download",
-      link: "#",
+      link: "https://raw.githubusercontent.com/Lovablemarc/Intraluxadvisors-en/main/downloads/IntraluxAdvisors_Guide_EN.pdf",
+      filename: "IntraluxAdvisors_Guide.pdf"
     },
     {
       icon: <FileSpreadsheet className="w-16 h-16 text-gold" />,
       titleKey: "resources_excel",
       buttonKey: "resources_download",
       link: "https://raw.githubusercontent.com/Lovablemarc/Intraluxadvisors-en/main/downloads/IntraluxAdvisors_CHECKLIST_EN.pdf",
+      filename: "IntraluxAdvisors_Checklist.pdf"
     },
     {
       icon: <HelpCircle className="w-16 h-16 text-gold" />,
       titleKey: "resources_faq",
       buttonKey: "resources_view",
       link: "#",
+      filename: ""
     },
   ];
+
+  const handleDownload = (url: string, filename: string) => {
+    if (url === "#") return;
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section id="resources" className="py-20">
@@ -43,17 +57,7 @@ export default function ResourcesSection() {
               <h3 className="font-semibold text-xl mb-6">{getText(resource.titleKey, language)}</h3>
               <GoldButton
                 variant="outline"
-                onClick={() => {
-                  if (resource.link !== "#") {
-                    // Create a temporary anchor element
-                    const link = document.createElement('a');
-                    link.href = resource.link;
-                    link.download = "IntraluxAdvisors_Checklist.pdf"; // Set the download filename
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }
-                }}
+                onClick={() => handleDownload(resource.link, resource.filename)}
               >
                 {getText(resource.buttonKey, language)}
               </GoldButton>
