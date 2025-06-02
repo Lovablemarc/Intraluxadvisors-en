@@ -1,6 +1,6 @@
-
 import { useLanguage } from "@/lib/LanguageContext";
 import { getText } from "@/lib/translations";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const { language } = useLanguage();
@@ -14,12 +14,12 @@ export default function Footer() {
           </div>
           
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-gold transition-colors">
+            <Link to="/legal-notice" className="hover:text-gold transition-colors">
               {getText("footer_legal", language)}
-            </a>
-            <a href="#" className="hover:text-gold transition-colors">
+            </Link>
+            <Link to="/privacy-policy" className="hover:text-gold transition-colors">
               {getText("footer_privacy", language)}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
