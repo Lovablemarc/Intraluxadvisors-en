@@ -1,4 +1,3 @@
-
 import { useLanguage } from "@/lib/LanguageContext";
 import { getText } from "@/lib/translations";
 import SectionTitle from "./SectionTitle";
@@ -37,13 +36,6 @@ export default function TestimonialsSection() {
                 <p className="font-semibold text-sm text-gray-500">{getText(testimonial.authorKey, language)}</p>
               </div>
             </div>
-          ))}
-        </div>
-        
-        {/* Client logos */}
-        <div className="mt-16 flex flex-wrap justify-center gap-8 items-center opacity-70">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="w-32 h-16 rounded bg-gray-300"></div>
           ))}
         </div>
       </div>
