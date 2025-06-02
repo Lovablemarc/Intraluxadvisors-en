@@ -18,53 +18,6 @@ export default function ContactSection() {
     message: "",
   });
   
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Create email body with form data
-    const emailBody = `
-New Intrastat Service Request
-
-Company: ${formData.company}
-Contact Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-
-Volume Information:
-- Monthly Invoices: ${formData.invoices}
-- Items per Invoice: ${formData.items}
-- Estimated Yearly Items: ${formData.yearly}
-
-Additional Message:
-${formData.message}
-    `.trim();
-
-    // Create mailto link
-    const mailtoLink = `mailto:marcparisotto@gmail.com?subject=Intrastat Service Request - ${formData.company}&body=${encodeURIComponent(emailBody)}`;
-
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    toast.success("Opening your email client to send the request");
-    
-    // Reset form
-    setFormData({
-      company: "",
-      name: "",
-      email: "",
-      phone: "",
-      invoices: "",
-      items: "",
-      yearly: "",
-      message: "",
-    });
-  };
-
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
@@ -72,7 +25,16 @@ ${formData.message}
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
-            <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8">
+            <form 
+              action="https://formmail.dreamhost.com/cgi-bin/formmail.cgi"
+              method="POST"
+              className="bg-white rounded-lg shadow-lg p-8"
+            >
+              <input type="hidden" name="recipient" value="info@intraluxadvisors.com" />
+              <input type="hidden" name="subject" value="Contact Form Submission" />
+              <input type="hidden" name="redirect" value="https://intraluxadvisors.com" />
+              <input type="hidden" name="required" value="name,email,message" />
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
@@ -83,9 +45,7 @@ ${formData.message}
                     id="company"
                     name="company"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
-                    required
                     value={formData.company}
-                    onChange={handleChange}
                   />
                 </div>
                 <div>
@@ -99,7 +59,6 @@ ${formData.message}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
                     required
                     value={formData.name}
-                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -116,7 +75,6 @@ ${formData.message}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
                     required
                     value={formData.email}
-                    onChange={handleChange}
                   />
                 </div>
                 <div>
@@ -129,7 +87,6 @@ ${formData.message}
                     name="phone"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
                     value={formData.phone}
-                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -145,7 +102,6 @@ ${formData.message}
                     name="invoices"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
                     value={formData.invoices}
-                    onChange={handleChange}
                   />
                 </div>
                 <div>
@@ -158,7 +114,6 @@ ${formData.message}
                     name="items"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
                     value={formData.items}
-                    onChange={handleChange}
                   />
                 </div>
                 <div>
@@ -171,7 +126,6 @@ ${formData.message}
                     name="yearly"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
                     value={formData.yearly}
-                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -185,8 +139,8 @@ ${formData.message}
                   name="message"
                   rows={4}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
+                  required
                   value={formData.message}
-                  onChange={handleChange}
                 ></textarea>
               </div>
               
