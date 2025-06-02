@@ -1,8 +1,8 @@
-
 import { useLanguage } from "@/lib/LanguageContext";
 import { getText } from "@/lib/translations";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useState, useEffect } from "react";
+import Logo from "./Logo";
 
 interface NavItem {
   id: string;
@@ -43,8 +43,8 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="text-xl md:text-2xl font-bold font-playfair text-darkText">
-            IntraLux<span className="text-gold"> Advisors</span>
+          <a href="#" className="flex items-center">
+            <Logo />
           </a>
         </div>
 

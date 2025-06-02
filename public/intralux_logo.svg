@@ -1,0 +1,61 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for the flowing lines -->
+    <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#007788;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#006677;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#007788;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- Gold accent gradient -->
+    <radialGradient id="goldAccent" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#CBA75C;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Left flowing line -->
+  <path d="M 40 120 Q 60 80, 90 70 Q 120 60, 150 65 Q 170 68, 180 75" 
+        stroke="url(#flowGradient)" 
+        stroke-width="4" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Right flowing line -->
+  <path d="M 220 75 Q 230 68, 250 65 Q 280 60, 310 70 Q 340 80, 360 120" 
+        stroke="url(#flowGradient)" 
+        stroke-width="4" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Central convergence point with gold accent -->
+  <circle cx="200" cy="70" r="6" fill="url(#goldAccent)"/>
+  
+  <!-- Subtle connecting element -->
+  <path d="M 180 75 Q 200 68, 220 75" 
+        stroke="url(#goldAccent)" 
+        stroke-width="2" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Company Name -->
+  <text x="200" y="140" 
+        font-family="Arial, sans-serif" 
+        font-size="24" 
+        font-weight="600" 
+        fill="#333333" 
+        text-anchor="middle">IntraLuxAdvisors</text>
+  
+  <!-- Tagline -->
+  <text x="200" y="165" 
+        font-family="Arial, sans-serif" 
+        font-size="12" 
+        font-weight="400" 
+        fill="#666666" 
+        text-anchor="middle">Simplifying EU Trade Compliance</text>
+  
+  <!-- Subtle background elements for flow -->
+  <circle cx="70" cy="100" r="2" fill="#007788" opacity="0.3"/>
+  <circle cx="330" cy="100" r="2" fill="#007788" opacity="0.3"/>
+  <circle cx="200" cy="50" r="1.5" fill="#CBA75C" opacity="0.5"/>
+</svg>
