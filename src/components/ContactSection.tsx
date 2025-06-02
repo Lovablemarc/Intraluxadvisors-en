@@ -204,12 +204,6 @@ ${formData.message}
                 {getText("contact_address_title", language)}
               </h3>
               
-              <div className="mb-6">
-                <div className="bg-gray-100 rounded-lg w-full h-48 mb-4 flex items-center justify-center text-gray-400">
-                  [Office Illustration]
-                </div>
-              </div>
-              
               <div className="space-y-4 text-gray-700">
                 <p className="font-semibold">IntraLux Advisors</p>
                 <p>2A Rue des Capucins, 1313 Ville-Haute Luxembourg</p>
