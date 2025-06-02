@@ -19,7 +19,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           {/* Default route redirects to /en */}
-          <Route path="/" element={<Navigate to="/en" replace />} />
+          <Route path="/" element={<Navigate to="/en\" replace />} />
           
           {/* Language routes all use the same Index component */}
           <Route path="/en" element={<Index />} />
