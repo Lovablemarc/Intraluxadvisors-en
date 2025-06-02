@@ -22,7 +22,7 @@ export const translations: Translations = {
   },
   nav_b2b: {
     en: "B2B Partners",
-    fr: "Partenaires pro",
+    fr: "Solutions B2B",
     de: "B2B-Partner",
   },
   nav_resources: {
@@ -44,7 +44,7 @@ export const translations: Translations = {
   },
   hero_subtitle: {
     en: "Save €12,000+ Annually While Ensuring 100% Compliance",
-    fr: "Économisez plus de 12 000 € par an avec une conformité à 100%",
+    fr: "Économisez plus de 12 000 € par an tout en assurant une conformité à 100%",
     de: "Sparen Sie jährlich über 12.000 € bei 100% Compliance",
   },
   hero_savings_title: {
@@ -54,12 +54,12 @@ export const translations: Translations = {
   },
   hero_time_title: {
     en: "Time Saved per Month",
-    fr: "Temps économisé par mois",
+    fr: "Temps gagné par mois",
     de: "Zeitersparnis pro Monat",
   },
   hero_cost_title: {
     en: "Monthly Labor Cost Savings",
-    fr: "Économies mensuelles de coûts salariaux",
+    fr: "Économies mensuelles sur les coûts de main-d'œuvre",
     de: "Monatliche Personalkosteneinsparung",
   },
   cta_discovery: {
@@ -69,7 +69,7 @@ export const translations: Translations = {
   },
   cta_roi: {
     en: "Calculate Your ROI",
-    fr: "Calculez votre ROI",
+    fr: "Calculez votre retour sur investissement",
     de: "Berechnen Sie Ihren ROI",
   },
 
@@ -81,7 +81,7 @@ export const translations: Translations = {
   },
   roi_subtitle: {
     en: "See how much you can save with our service",
-    fr: "Découvrez combien vous pouvez économiser avec notre service",
+    fr: "Découvrez vos économies potentielles avec notre service",
     de: "Sehen Sie, wie viel Sie mit unserem Service sparen können",
   },
   roi_without_title: {
@@ -160,12 +160,12 @@ export const translations: Translations = {
   // Limited Time Offer
   limited_offer: {
     en: "Limited Time Offer",
-    fr: "Offre limitée dans le temps",
+    fr: "Offre à durée limitée",
     de: "Zeitlich begrenztes Angebot",
   },
   setup_slots: {
     en: "Setup slots available this month only • Currently accepting 25 new clients",
-    fr: "Places disponibles ce mois-ci uniquement • Accepte actuellement 25 nouveaux clients",
+    fr: "Places disponibles ce mois-ci uniquement • Acceptation de 25 nouveaux clients en cours",
     de: "Einrichtungsplätze nur diesen Monat verfügbar • Aktuell werden 25 neue Kunden aufgenommen",
   },
 
@@ -182,7 +182,7 @@ export const translations: Translations = {
   },
   why_legal_desc: {
     en: "Avoid fines & penalties",
-    fr: "Éviter sanctions et pénalités",
+    fr: "Évitez les amendes et pénalités",
     de: "Geldstrafen vermeiden",
   },
   why_customs_title: {
@@ -192,7 +192,7 @@ export const translations: Translations = {
   },
   why_customs_desc: {
     en: "Track your EU flows precisely",
-    fr: "Suivi précis de vos flux intra-UE",
+    fr: "Suivez précisément vos flux UE",
     de: "Präzise Verfolgung Ihrer EU-Ströme",
   },
   why_logistics_title: {
@@ -202,29 +202,29 @@ export const translations: Translations = {
   },
   why_logistics_desc: {
     en: "Better control costs & inventory",
-    fr: "Piloter coûts et stocks",
+    fr: "Meilleur contrôle des coûts et des stocks",
     de: "Bessere Kosten- und Lagersteuerung",
   },
 
   // Process Section
   process_title: {
     en: "Our 4-Step Process",
-    fr: "Processus en 4 étapes",
+    fr: "Notre processus en 4 étapes",
     de: "Unser 4-Stufen Ablauf",
   },
   process_step1_title: {
     en: "Kick-off & Onboarding",
-    fr: "Kick-off & Onboarding",
+    fr: "Démarrage et intégration",
     de: "Kick-off & Onboarding",
   },
   process_step1_desc: {
     en: "Set up access & data flows",
-    fr: "Configurer l'accès et les flux de données",
+    fr: "Configuration des accès et flux de données",
     de: "Zugang & Datenflüsse einrichten",
   },
   process_step2_title: {
     en: "Data Collection & Validation",
-    fr: "Collecte & Validation des données",
+    fr: "Collecte et validation des données",
     de: "Datenerfassung & Validierung",
   },
   process_step2_desc: {
@@ -234,22 +234,22 @@ export const translations: Translations = {
   },
   process_step3_title: {
     en: "Client Review",
-    fr: "Revue Client",
+    fr: "Révision client",
     de: "Kundenprüfung",
   },
   process_step3_desc: {
     en: "Approve draft via secure portal",
-    fr: "Approuver l'ébauche via portail sécurisé",
+    fr: "Approbation via portail sécurisé",
     de: "Entwurf über sicheres Portal genehmigen",
   },
   process_step4_title: {
     en: "Filing & Reporting",
-    fr: "Dépôt & Rapports",
+    fr: "Dépôt et rapports",
     de: "Einreichung & Berichterstattung",
   },
   process_step4_desc: {
     en: "Submit to customs & deliver acknowledgment",
-    fr: "Soumettre aux douanes & livrer l'accusé",
+    fr: "Soumission aux douanes et confirmation",
     de: "Zolleinreichung & Bestätigungszustellung",
   },
 
@@ -266,7 +266,7 @@ export const translations: Translations = {
   },
   b2b_portal: {
     en: "Partner Portal",
-    fr: "Portail Partenaire",
+    fr: "Portail partenaire",
     de: "Partner-Portal",
   },
   b2b_sla: {
@@ -281,7 +281,7 @@ export const translations: Translations = {
   },
   b2b_api: {
     en: "API & Integrations",
-    fr: "API & Intégrations",
+    fr: "API et intégrations",
     de: "API & Integrationen",
   },
   b2b_cta: {
@@ -303,7 +303,7 @@ export const translations: Translations = {
   },
   resources_excel: {
     en: "Excel Checklist",
-    fr: "Checklist Excel",
+    fr: "Liste de contrôle Excel",
     de: "Excel-Checkliste",
   },
   resources_faq: {
@@ -325,7 +325,7 @@ export const translations: Translations = {
   // Testimonials Section
   testimonials_title: {
     en: "Client Testimonials",
-    fr: "Témoignages Clients",
+    fr: "Témoignages clients",
     de: "Kundenstimmen",
   },
   testimonial1_text: {
@@ -357,12 +357,12 @@ export const translations: Translations = {
   },
   contact_company: {
     en: "Company Name",
-    fr: "Société",
+    fr: "Nom de l'entreprise",
     de: "Firmenname",
   },
   contact_name: {
     en: "Contact Name",
-    fr: "Nom",
+    fr: "Nom du contact",
     de: "Name",
   },
   contact_email: {
@@ -377,22 +377,22 @@ export const translations: Translations = {
   },
   contact_invoices: {
     en: "Number of invoices per month",
-    fr: "Nombre de factures/mois",
+    fr: "Nombre de factures par mois",
     de: "Anzahl Rechnungen/Monat",
   },
   contact_lines: {
     en: "Number of Intrastat lines per month",
-    fr: "Nombre de lignes Intrastat/mois",
+    fr: "Nombre de lignes Intrastat par mois",
     de: "Anzahl Intrastat-Positionen/Monat",
   },
   contact_yearly: {
     en: "Estimated lines per year",
-    fr: "Lignes estimées/an",
+    fr: "Estimation des lignes par an",
     de: "Geschätzte Positionen/Jahr",
   },
   contact_message: {
     en: "Message / Additional details",
-    fr: "Message",
+    fr: "Message / Détails supplémentaires",
     de: "Nachricht",
   },
   contact_submit: {
@@ -402,7 +402,7 @@ export const translations: Translations = {
   },
   contact_address_title: {
     en: "Our Office",
-    fr: "Notre Bureau",
+    fr: "Notre bureau",
     de: "Unser Büro",
   },
 
@@ -421,128 +421,6 @@ export const translations: Translations = {
     en: "Privacy Policy",
     fr: "Politique de confidentialité",
     de: "Datenschutz",
-  },
-  
-  // Story content
-  story_title: {
-    en: "A Luxembourg Success Story",
-    fr: "Une histoire de réussite luxembourgeoise",
-    de: "Eine Luxemburger Erfolgsgeschichte",
-  },
-  story_p1: {
-    en: "A growing company in Luxembourg has recently exceeded the Intrastat filing threshold due to a surge in intra-EU trade. Under Luxembourg law, businesses surpassing these limits must submit detailed monthly Intrastat declarations, reporting all goods dispatched and received within the EU.",
-    fr: "Une entreprise en pleine croissance au Luxembourg a récemment dépassé le seuil de déclaration Intrastat en raison d'une augmentation des échanges intra-UE. Selon la loi luxembourgeoise, les entreprises dépassant ces limites doivent soumettre des déclarations Intrastat mensuelles détaillées, rapportant tous les biens expédiés et reçus au sein de l'UE.",
-    de: "Ein wachsendes Unternehmen in Luxemburg hat aufgrund eines Anstiegs des inner-EU-Handels kürzlich die Intrastat-Meldeschwelle überschritten. Nach luxemburgischem Recht müssen Unternehmen, die diese Grenzen überschreiten, detaillierte monatliche Intrastat-Erklärungen einreichen und alle innerhalb der EU versandten und empfangenen Waren melden.",
-  },
-  challenge_title: {
-    en: "The Challenge",
-    fr: "Le Défi",
-    de: "Die Herausforderung",
-  },
-  challenge_subtitle1: {
-    en: "Complexity & Compliance Risk",
-    fr: "Complexité et risque de conformité",
-    de: "Komplexität und Compliance-Risiko",
-  },
-  challenge_p1: {
-    en: "Intrastat rules are intricate, with constantly evolving thresholds, exemption criteria, and data-capture requirements. Misclassification of goods, incorrect unit values, or late submissions can trigger hefty administrative fines and audit scrutiny.",
-    fr: "Les règles Intrastat sont complexes, avec des seuils, des critères d'exemption et des exigences de capture de données en constante évolution. Une mauvaise classification des marchandises, des valeurs unitaires incorrectes ou des soumissions tardives peuvent déclencher de lourdes amendes administratives et un examen d'audit.",
-    de: "Die Intrastat-Regeln sind komplex, mit sich ständig ändernden Schwellenwerten, Ausnahmekriterien und Datenerfassungsanforderungen. Falsche Klassifizierung von Waren, falsche Einheitswerte oder verspätete Einreichungen können zu hohen Verwaltungsstrafen und Prüfungen führen.",
-  },
-  challenge_subtitle2: {
-    en: "Resource Drain",
-    fr: "Perte de ressources",
-    de: "Ressourcenverschwendung",
-  },
-  challenge_p2: {
-    en: "Internal teams lack the specialized expertise to track, compile, and validate all transaction details accurately. Significant time is diverted from core business activities—logistics, procurement, and finance—to manage Intrastat paperwork.",
-    fr: "Les équipes internes manquent d'expertise spécialisée pour suivre, compiler et valider avec précision tous les détails des transactions. Un temps considérable est détourné des activités commerciales principales - logistique, achats et finances - pour gérer la paperasserie Intrastat.",
-    de: "Internen Teams fehlt das Fachwissen, um alle Transaktionsdetails genau zu verfolgen, zusammenzustellen und zu validieren. Erhebliche Zeit wird von Kerngeschäftsaktivitäten - Logistik, Beschaffung und Finanzen - abgezweigt, um Intrastat-Papierkram zu verwalten.",
-  },
-  challenge_subtitle3: {
-    en: "Data Integrity Challenges",
-    fr: "Défis d'intégrité des données",
-    de: "Herausforderungen bei der Datenintegrität",
-  },
-  challenge_p3: {
-    en: "Disparate IT systems and manual data entry increase the likelihood of errors. Incomplete or inconsistent records undermine regulatory confidence and can lead to penalties.",
-    fr: "Des systèmes informatiques disparates et la saisie manuelle des données augmentent la probabilité d'erreurs. Des enregistrements incomplets ou incohérents minent la confiance réglementaire et peuvent entraîner des pénalités.",
-    de: "Unterschiedliche IT-Systeme und manuelle Dateneingabe erhöhen die Wahrscheinlichkeit von Fehlern. Unvollständige oder inkonsistente Aufzeichnungen untergraben das Vertrauen der Regulierungsbehörden und können zu Strafen führen.",
-  },
-  question_title: {
-    en: "\"How Do We Do This?\"",
-    fr: "\"Comment faire cela ?\"",
-    de: "\"Wie machen wir das?\"",
-  },
-  question_p1: {
-    en: "The decision-makers are asking:",
-    fr: "Les décideurs se demandent :",
-    de: "Die Entscheidungsträger fragen:",
-  },
-  question_q1: {
-    en: "\"How can we ensure 100% compliance with Luxembourg's Intrastat requirements without overburdening our staff?\"",
-    fr: "\"Comment pouvons-nous assurer une conformité à 100% avec les exigences Intrastat du Luxembourg sans surcharger notre personnel ?\"",
-    de: "\"Wie können wir 100% Einhaltung der luxemburgischen Intrastat-Anforderungen sicherstellen, ohne unser Personal zu überlasten?\"",
-  },
-  question_q2: {
-    en: "\"What processes or tools will give us timely, accurate reporting to avoid fines?\"",
-    fr: "\"Quels processus ou outils nous donneront des rapports précis et opportuns pour éviter les amendes ?\"",
-    de: "\"Welche Prozesse oder Tools werden uns rechtzeitige, genaue Berichte liefern, um Strafen zu vermeiden?\"",
-  },
-  question_q3: {
-    en: "\"Is there an expert partner who understands our industry's specific flows and can integrate seamlessly with our ERP systems?\"",
-    fr: "\"Existe-t-il un partenaire expert qui comprend les flux spécifiques de notre industrie et peut s'intégrer parfaitement à nos systèmes ERP ?\"",
-    de: "\"Gibt es einen Expertenpartner, der die spezifischen Abläufe unserer Branche versteht und sich nahtlos in unsere ERP-Systeme integrieren kann?\"",
-  },
-  solution_title: {
-    en: "Our Solution",
-    fr: "Notre Solution",
-    de: "Unsere Lösung",
-  },
-  solution_subtitle1: {
-    en: "Dedicated Expertise",
-    fr: "Expertise dédiée",
-    de: "Dedizierte Expertise",
-  },
-  solution_p1: {
-    en: "A team of Luxembourg-based Intrastat specialists who stay up-to-date on all regulatory changes and threshold adjustments.",
-    fr: "Une équipe de spécialistes Intrastat basés au Luxembourg qui restent à jour sur tous les changements réglementaires et ajustements de seuils.",
-    de: "Ein Team von in Luxemburg ansässigen Intrastat-Spezialisten, die über alle regulatorischen Änderungen und Schwellenwertanpassungen auf dem Laufenden bleiben.",
-  },
-  solution_subtitle2: {
-    en: "End-to-End Process Management",
-    fr: "Gestion de processus de bout en bout",
-    de: "End-to-End Prozessmanagement",
-  },
-  solution_p2: {
-    en: "From data extraction in your ERP to classification, validation, and e-submission of monthly declarations. Automated checks for unit values, commodity codes, and partner VAT statuses to eliminate human error.",
-    fr: "De l'extraction de données dans votre ERP à la classification, la validation et la soumission électronique des déclarations mensuelles. Vérifications automatisées des valeurs unitaires, des codes de marchandises et des statuts de TVA des partenaires pour éliminer l'erreur humaine.",
-    de: "Von der Datenextraktion in Ihrem ERP bis zur Klassifizierung, Validierung und elektronischen Einreichung monatlicher Meldungen. Automatisierte Prüfungen für Einheitswerte, Warencodes und MwSt-Status der Partner zur Eliminierung menschlicher Fehler.",
-  },
-  solution_subtitle3: {
-    en: "Seamless Integration & Reporting",
-    fr: "Intégration et rapports transparents",
-    de: "Nahtlose Integration & Berichterstattung",
-  },
-  solution_p3: {
-    en: "Tailored connectors to your existing systems (SAP, Oracle, Microsoft Dynamics, etc.) for real-time data synchronization. Custom dashboards provide instant visibility into impending thresholds and past filing performance.",
-    fr: "Connecteurs sur mesure à vos systèmes existants (SAP, Oracle, Microsoft Dynamics, etc.) pour une synchronisation des données en temps réel. Des tableaux de bord personnalisés offrent une visibilité instantanée sur les seuils imminents et les performances de dépôt passées.",
-    de: "Maßgeschneiderte Konnektoren für Ihre bestehenden Systeme (SAP, Oracle, Microsoft Dynamics usw.) für Echtzeit-Datensynchronisierung. Benutzerdefinierte Dashboards bieten sofortige Einblicke in bevorstehende Schwellenwerte und bisherige Einreichungsleistungen.",
-  },
-  solution_subtitle4: {
-    en: "Audit Support & Peace of Mind",
-    fr: "Support d'audit et tranquillité d'esprit",
-    de: "Audit-Unterstützung & Seelenfrieden",
-  },
-  solution_p4: {
-    en: "Full documentation package and expert backup in case of Luxembourg Customs queries or audits. Proactive alerts on legislative updates and recommended actions.",
-    fr: "Ensemble complet de documentation et sauvegarde d'experts en cas de requêtes ou d'audits des douanes luxembourgeoises. Alertes proactives sur les mises à jour législatives et les actions recommandées.",
-    de: "Vollständiges Dokumentationspaket und Expertenunterstützung bei Anfragen oder Prüfungen durch den luxemburgischen Zoll. Proaktive Warnungen zu gesetzlichen Aktualisierungen und empfohlenen Maßnahmen.",
-  },
-  final_cta: {
-    en: "Don't let Intrastat obligations slow down your growth or expose you to penalties. Contact IntraLux Advisors today for a free consultation, and discover how our tailored compliance services can safeguard your Luxembourg operations—so you can focus on expanding your business with confidence!",
-    fr: "Ne laissez pas les obligations Intrastat ralentir votre croissance ou vous exposer à des pénalités. Contactez IntraLux Advisors aujourd'hui pour une consultation gratuite, et découvrez comment nos services de conformité sur mesure peuvent protéger vos opérations au Luxembourg—afin que vous puissiez vous concentrer sur le développement de votre entreprise en toute confiance !",
-    de: "Lassen Sie nicht zu, dass Intrastat-Verpflichtungen Ihr Wachstum verlangsamen oder Sie Strafen aussetzen. Kontaktieren Sie IntraLux Advisors noch heute für eine kostenlose Beratung und entdecken Sie, wie unsere maßgeschneiderten Compliance-Dienste Ihre Luxemburger Geschäfte schützen können—damit Sie sich mit Zuversicht auf die Expansion Ihres Unternehmens konzentrieren können!",
   },
 };
 
