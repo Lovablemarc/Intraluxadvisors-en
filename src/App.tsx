@@ -7,6 +7,7 @@ import { LanguageProvider } from "@/lib/LanguageContext";
 import Index from "./pages/Index";
 import LegalNotice from "./pages/LegalNotice";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/CookieConsent";
 
@@ -21,7 +22,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             {/* Default route redirects to /en */}
-            <Route path="/" element={<Navigate to="/en\" replace />} />
+            <Route path="/" element={<Navigate to="/en" replace />} />
             
             {/* English route */}
             <Route path="/en" element={<Index />} />
@@ -29,6 +30,7 @@ const App = () => (
             {/* Legal pages */}
             <Route path="/legal-notice" element={<LegalNotice />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/faq" element={<FAQ />} />
             
             {/* Catch all */}
             <Route path="*" element={<NotFound />} />
