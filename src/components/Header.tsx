@@ -43,13 +43,20 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="flex items-center py-4"> {/* Increased padding for better spacing */}
+          <a href="#" className="flex items-center py-4">
             <Logo />
           </a>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
+          <div className="flex items-center space-x-4 mr-6">
+            <img src="https://flagcdn.com/24x18/lu.png" alt="Luxembourgish" title="Luxembourgish" className="w-6 h-4 rounded shadow-sm" />
+            <img src="https://flagcdn.com/24x18/fr.png" alt="French" title="French" className="w-6 h-4 rounded shadow-sm" />
+            <img src="https://flagcdn.com/24x18/de.png" alt="German" title="German" className="w-6 h-4 rounded shadow-sm" />
+            <img src="https://flagcdn.com/24x18/gb.png" alt="English" title="English" className="w-6 h-4 rounded shadow-sm" />
+            <img src="https://flagcdn.com/24x18/es.png" alt="Spanish" title="Spanish" className="w-6 h-4 rounded shadow-sm" />
+          </div>
           {navItems.map((item) => (
             <a
               key={item.id}
@@ -105,6 +112,13 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white">
           <div className="container mx-auto px-4 py-2">
+            <div className="flex justify-center space-x-3 py-4 border-b border-gray-100">
+              <img src="https://flagcdn.com/24x18/lu.png" alt="Luxembourgish" title="Luxembourgish" className="w-6 h-4 rounded shadow-sm" />
+              <img src="https://flagcdn.com/24x18/fr.png" alt="French" title="French" className="w-6 h-4 rounded shadow-sm" />
+              <img src="https://flagcdn.com/24x18/de.png" alt="German" title="German" className="w-6 h-4 rounded shadow-sm" />
+              <img src="https://flagcdn.com/24x18/gb.png" alt="English" title="English" className="w-6 h-4 rounded shadow-sm" />
+              <img src="https://flagcdn.com/24x18/es.png" alt="Spanish" title="Spanish" className="w-6 h-4 rounded shadow-sm" />
+            </div>
             {navItems.map((item) => (
               <a
                 key={item.id}
