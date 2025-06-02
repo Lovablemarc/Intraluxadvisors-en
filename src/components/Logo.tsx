@@ -10,7 +10,7 @@ export default function Logo({ className }: LogoProps) {
       <img 
         src="/intralux_logo.svg" 
         alt="IntraLux Advisors" 
-        className="h-12 w-auto"
+        className="h-16 w-auto" // Increased from h-12 to h-16
       />
     </div>
   );
