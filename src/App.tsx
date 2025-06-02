@@ -21,7 +21,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             {/* Default route redirects to /en */}
-            <Route path="/" element={<Navigate to="/en" replace />} />
+            <Route path="/" element={<Navigate to="/en\" replace />} />
             
             {/* English route */}
             <Route path="/en" element={<Index />} />
