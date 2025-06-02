@@ -12,11 +12,10 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
 import SEOHelmet from "@/components/SEOHelmet";
-import { LanguageProvider } from "@/lib/LanguageContext";
 
 const Index = () => {
   return (
-    <LanguageProvider>
+    <>
       <SEOHelmet />
       <StructuredData />
       <Header />
@@ -33,7 +32,7 @@ const Index = () => {
         <ContactSection />
       </main>
       <Footer />
-    </LanguageProvider>
+    </>
   );
 }
 
