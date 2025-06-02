@@ -15,14 +15,14 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
             <form 
-              action="https://formmail.dreamhost.com/cgi-bin/formmail.cgi"
+              action="https://formsubmit.co/info@intraluxadvisors.com"
               method="POST"
               className="bg-white rounded-lg shadow-lg p-8"
             >
-              <input type="hidden" name="recipient" value="info@intraluxadvisors.com" />
-              <input type="hidden" name="subject" value="Contact Form Submission" />
-              <input type="hidden" name="redirect" value="https://intraluxadvisors.com" />
-              <input type="hidden" name="required" value="company,name,email,message" />
+              <input type="hidden" name="_next" value="https://intraluxadvisors.com/thank-you" />
+              <input type="hidden" name="_subject" value="New Contact Form Submission" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
