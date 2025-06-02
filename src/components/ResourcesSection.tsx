@@ -1,4 +1,3 @@
-
 import { useLanguage } from "@/lib/LanguageContext";
 import { getText } from "@/lib/translations";
 import SectionTitle from "./SectionTitle";
@@ -19,7 +18,7 @@ export default function ResourcesSection() {
       icon: <FileSpreadsheet className="w-16 h-16 text-gold" />,
       titleKey: "resources_excel",
       buttonKey: "resources_download",
-      link: "#",
+      link: "https://raw.githubusercontent.com/Lovablemarc/Intraluxadvisors-en/main/downloads/IntraluxAdvisors_CHECKLIST_EN.pdf",
     },
     {
       icon: <HelpCircle className="w-16 h-16 text-gold" />,
@@ -44,7 +43,17 @@ export default function ResourcesSection() {
               <h3 className="font-semibold text-xl mb-6">{getText(resource.titleKey, language)}</h3>
               <GoldButton
                 variant="outline"
-                onClick={() => window.open(resource.link, "_blank")}
+                onClick={() => {
+                  if (resource.link !== "#") {
+                    // Create a temporary anchor element
+                    const link = document.createElement('a');
+                    link.href = resource.link;
+                    link.download = "IntraluxAdvisors_Checklist.pdf"; // Set the download filename
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }
+                }}
               >
                 {getText(resource.buttonKey, language)}
               </GoldButton>
