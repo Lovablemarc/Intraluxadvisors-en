@@ -32,28 +32,18 @@ export default function CookieConsent() {
   const translations = {
     title: {
       en: "Cookie Settings",
-      fr: "Paramètres des cookies",
-      de: "Cookie-Einstellungen"
     },
     description: {
       en: "We use cookies to enhance your browsing experience and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies.",
-      fr: "Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser notre trafic. En cliquant sur « Tout accepter », vous consentez à notre utilisation des cookies.",
-      de: "Wir verwenden Cookies, um Ihr Surferlebnis zu verbessern und unseren Verkehr zu analysieren. Durch Klicken auf „Alle akzeptieren\" stimmen Sie der Verwendung von Cookies zu."
     },
     accept: {
       en: "Accept All",
-      fr: "Tout accepter",
-      de: "Alle akzeptieren"
     },
     decline: {
       en: "Essential Only",
-      fr: "Essentiels uniquement",
-      de: "Nur essenzielle"
     },
     privacy: {
       en: "Privacy Policy",
-      fr: "Politique de confidentialité",
-      de: "Datenschutzerklärung"
     }
   };
 

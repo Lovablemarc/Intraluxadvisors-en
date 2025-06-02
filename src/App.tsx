@@ -21,12 +21,10 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             {/* Default route redirects to /en */}
-            <Route path="/" element={<Navigate to="/en\" replace />} />
+            <Route path="/" element={<Navigate to="/en" replace />} />
             
-            {/* Language routes all use the same Index component */}
+            {/* English route */}
             <Route path="/en" element={<Index />} />
-            <Route path="/fr" element={<Index />} />
-            <Route path="/de" element={<Index />} />
             
             {/* Legal pages */}
             <Route path="/legal-notice" element={<LegalNotice />} />
