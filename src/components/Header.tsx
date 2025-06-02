@@ -41,100 +41,110 @@ export default function Header() {
         scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
       }`}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="flex items-center">
-          <a href="#" className="flex items-center py-4">
-            <Logo />
-          </a>
-        </div>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          <div className="flex items-center space-x-4 mr-6">
-            <img src="https://flagcdn.com/24x18/lu.png" alt="Luxembourgish" title="Luxembourgish" className="w-6 h-4 rounded shadow-sm" />
-            <img src="https://flagcdn.com/24x18/fr.png" alt="French" title="French" className="w-6 h-4 rounded shadow-sm" />
-            <img src="https://flagcdn.com/24x18/de.png" alt="German" title="German" className="w-6 h-4 rounded shadow-sm" />
-            <img src="https://flagcdn.com/24x18/gb.png" alt="English" title="English" className="w-6 h-4 rounded shadow-sm" />
-            <img src="https://flagcdn.com/24x18/es.png" alt="Spanish" title="Spanish" className="w-6 h-4 rounded shadow-sm" />
-          </div>
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className="text-darkText hover:text-gold transition-colors"
-            >
-              {getText(item.key, language)}
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center">
+            <a href="#" className="flex items-center py-4">
+              <Logo />
             </a>
-          ))}
-          <LanguageSwitcher />
-        </nav>
+          </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-darkText"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? (
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white">
-          <div className="container mx-auto px-4 py-2">
-            <div className="flex justify-center space-x-3 py-4 border-b border-gray-100">
-              <img src="https://flagcdn.com/24x18/lu.png" alt="Luxembourgish" title="Luxembourgish" className="w-6 h-4 rounded shadow-sm" />
-              <img src="https://flagcdn.com/24x18/fr.png" alt="French" title="French" className="w-6 h-4 rounded shadow-sm" />
-              <img src="https://flagcdn.com/24x18/de.png" alt="German" title="German" className="w-6 h-4 rounded shadow-sm" />
-              <img src="https://flagcdn.com/24x18/gb.png" alt="English" title="English" className="w-6 h-4 rounded shadow-sm" />
-              <img src="https://flagcdn.com/24x18/es.png" alt="Spanish" title="Spanish" className="w-6 h-4 rounded shadow-sm" />
-            </div>
-            {navItems.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                className="block py-2 text-darkText hover:text-gold transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {getText(item.key, language)}
-              </a>
-            ))}
-            <div className="py-2">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex flex-col items-end">
+            <div className="flex items-center space-x-6 mb-2">
+              {navItems.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="text-darkText hover:text-gold transition-colors"
+                >
+                  {getText(item.key, language)}
+                </a>
+              ))}
               <LanguageSwitcher />
             </div>
-          </div>
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <span>We speak:</span>
+              <div className="flex items-center space-x-2">
+                <img src="https://flagcdn.com/24x18/lu.png" alt="Luxembourgish" title="Luxembourgish" className="w-6 h-4 rounded shadow-sm" />
+                <img src="https://flagcdn.com/24x18/fr.png" alt="French" title="French" className="w-6 h-4 rounded shadow-sm" />
+                <img src="https://flagcdn.com/24x18/de.png" alt="German" title="German" className="w-6 h-4 rounded shadow-sm" />
+                <img src="https://flagcdn.com/24x18/gb.png" alt="English" title="English" className="w-6 h-4 rounded shadow-sm" />
+                <img src="https://flagcdn.com/24x18/es.png" alt="Spanish" title="Spanish" className="w-6 h-4 rounded shadow-sm" />
+              </div>
+            </div>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-darkText"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
+          </button>
         </div>
-      )}
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white">
+            <div className="container mx-auto px-4 py-2">
+              {navItems.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="block py-2 text-darkText hover:text-gold transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {getText(item.key, language)}
+                </a>
+              ))}
+              <div className="py-2">
+                <LanguageSwitcher />
+              </div>
+              <div className="flex items-center gap-2 py-4 border-t border-gray-100">
+                <span className="text-sm text-gray-600">We speak:</span>
+                <div className="flex items-center space-x-2">
+                  <img src="https://flagcdn.com/24x18/lu.png" alt="Luxembourgish" title="Luxembourgish" className="w-6 h-4 rounded shadow-sm" />
+                  <img src="https://flagcdn.com/24x18/fr.png" alt="French" title="French" className="w-6 h-4 rounded shadow-sm" />
+                  <img src="https://flagcdn.com/24x18/de.png" alt="German" title="German" className="w-6 h-4 rounded shadow-sm" />
+                  <img src="https://flagcdn.com/24x18/gb.png" alt="English" title="English" className="w-6 h-4 rounded shadow-sm" />
+                  <img src="https://flagcdn.com/24x18/es.png" alt="Spanish" title="Spanish" className="w-6 h-4 rounded shadow-sm" />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </header>
   );
 }
