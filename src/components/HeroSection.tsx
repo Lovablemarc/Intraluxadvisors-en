@@ -10,7 +10,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative min-h-[80vh] flex items-center hero-pattern">
+    <section id="hero" className="relative min-h-[80vh] flex items-center hero-pattern pt-32"> {/* Added pt-32 for more spacing */}
       <div 
         className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/80 to-white/90"
         aria-hidden="true"

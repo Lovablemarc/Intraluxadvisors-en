@@ -43,7 +43,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="flex items-center py-3"> {/* Increased padding to accommodate larger logo */}
+          <a href="#" className="flex items-center py-4"> {/* Increased padding for better spacing */}
             <Logo />
           </a>
         </div>
