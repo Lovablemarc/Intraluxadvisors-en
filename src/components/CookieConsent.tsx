@@ -36,7 +36,7 @@ export default function CookieConsent() {
       de: "Cookie-Einstellungen"
     },
     description: {
-      en: "We use cookies to enhance your browsing experience and analyze our traffic. By clicking \"Accept All", you consent to our use of cookies.",
+      en: "We use cookies to enhance your browsing experience and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies.",
       fr: "Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser notre trafic. En cliquant sur « Tout accepter », vous consentez à notre utilisation des cookies.",
       de: "Wir verwenden Cookies, um Ihr Surferlebnis zu verbessern und unseren Verkehr zu analysieren. Durch Klicken auf „Alle akzeptieren\" stimmen Sie der Verwendung von Cookies zu."
     },
