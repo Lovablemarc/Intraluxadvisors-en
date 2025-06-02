@@ -3,6 +3,7 @@ import { getText } from "@/lib/translations";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useState, useEffect } from "react";
 import Logo from "./Logo";
+import { Linkedin } from "lucide-react";
 
 interface NavItem {
   id: string;
@@ -62,6 +63,14 @@ export default function Header() {
                 </a>
               ))}
               <LanguageSwitcher />
+              <a 
+                href="https://www.linkedin.com/company/intraluxadvisors" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-darkText hover:text-gold transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <span>We speak:</span>
@@ -140,6 +149,17 @@ export default function Header() {
                   <img src="https://flagcdn.com/24x18/gb.png" alt="English" title="English" className="w-6 h-4 rounded shadow-sm" />
                   <img src="https://flagcdn.com/24x18/es.png" alt="Spanish" title="Spanish" className="w-6 h-4 rounded shadow-sm" />
                 </div>
+              </div>
+              <div className="py-2 border-t border-gray-100">
+                <a 
+                  href="https://www.linkedin.com/company/intraluxadvisors" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-darkText hover:text-gold transition-colors"
+                >
+                  <Linkedin className="w-5 h-5" />
+                  <span>Follow us on LinkedIn</span>
+                </a>
               </div>
             </div>
           </div>
