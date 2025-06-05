@@ -24,7 +24,7 @@ export function ContactForm() {
           {getText("contact_title", language)}
         </CardTitle>
         <CardDescription className="text-center">
-          Fill out the form below and we&apos;ll get back to you.
+          Fill out the form below and we'll get back to you.
         </CardDescription>
       </CardHeader>
       <CardContent>
