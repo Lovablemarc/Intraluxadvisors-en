@@ -1,4 +1,5 @@
-import React, { createContext, useContext } from 'react';
+
+import React, { createContext, useContext, useState } from 'react';
 import { Language } from './translations';
 
 interface LanguageContextType {
@@ -9,9 +10,7 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Always use English
-  const language: Language = 'en';
-  const setLanguage = () => {}; // No-op since we only support English
+  const [language, setLanguage] = useState<Language>('en');
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>

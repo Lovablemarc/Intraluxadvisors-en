@@ -1,27 +1,20 @@
-import { useState, useEffect } from 'react';
+
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Loader2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-
-const FORM_SUBMIT_EMAIL = "info@intraluxadvisors.com";
+import { useLanguage } from '@/lib/LanguageContext';
+import { getText } from '@/lib/translations';
 
 export function ContactForm() {
+  const { language } = useLanguage();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [redirectUrl, setRedirectUrl] = useState('');
-  const [formSubmitEmailPlaceholder, setFormSubmitEmailPlaceholder] = useState(false);
-
-  useEffect(() => {
-    setRedirectUrl(window.location.origin + '/thank-you');
-    if (!FORM_SUBMIT_EMAIL.includes('@')) {
-      setFormSubmitEmailPlaceholder(true);
-    }
-  }, []);
 
   const handleFormSubmit = () => {
     setIsSubmitting(true);
@@ -30,26 +23,26 @@ export function ContactForm() {
   return (
     <Card className="w-full shadow-xl bg-card text-card-foreground">
       <CardHeader>
-        <CardTitle className="text-3xl font-headline text-center">Contact Us</CardTitle>
+        <CardTitle className="text-3xl font-headline text-center">
+          {getText("contact_title", language)}
+        </CardTitle>
         <CardDescription className="text-center">
           Fill out the form below and we&apos;ll get back to you.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form
-          action={`https://formsubmit.io/${FORM_SUBMIT_EMAIL}`}
+          id="contactform"
+          action="https://formsubmit.io/send/info@intraluxadvisors.com"
           method="POST"
           onSubmit={handleFormSubmit}
         >
-          <input type="text" name="_formsubmit_id" style={{display:"none"}} />
-          {redirectUrl && <input type="hidden" name="_redirect" value={redirectUrl} />}
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_subject" value={`New Contact Form Submission: ${name || 'N/A'}`} />
+          <input name="_formsubmit_id" type="text" style={{display:"none"}} />
 
           <div className="space-y-6">
             <div>
               <Label htmlFor="name" className="block text-sm font-medium mb-1">
-                Full Name
+                {getText("contact_name", language)}
               </Label>
               <Input
                 type="text"
@@ -61,13 +54,13 @@ export function ContactForm() {
                 className="mt-1 block w-full"
                 placeholder="John Doe"
                 disabled={isSubmitting}
-                aria-label="Full Name"
+                aria-label={getText("contact_name", language)}
               />
             </div>
 
             <div>
               <Label htmlFor="email" className="block text-sm font-medium mb-1">
-                Email Address
+                {getText("contact_email", language)}
               </Label>
               <Input
                 type="email"
@@ -79,25 +72,25 @@ export function ContactForm() {
                 className="mt-1 block w-full"
                 placeholder="you@example.com"
                 disabled={isSubmitting}
-                aria-label="Email Address"
+                aria-label={getText("contact_email", language)}
               />
             </div>
 
             <div>
-              <Label htmlFor="message" className="block text-sm font-medium mb-1">
-                Message
+              <Label htmlFor="comment" className="block text-sm font-medium mb-1">
+                {getText("contact_message", language)}
               </Label>
               <Textarea
-                name="message"
-                id="message"
-                rows={5}
+                name="comment"
+                id="comment"
+                rows={3}
                 required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 className="mt-1 block w-full"
                 placeholder="Your message..."
                 disabled={isSubmitting}
-                aria-label="Message"
+                aria-label={getText("contact_message", language)}
               />
             </div>
 
@@ -105,7 +98,7 @@ export function ContactForm() {
               <Button
                 type="submit"
                 className="w-full flex justify-center items-center bg-gold hover:bg-gold/90 text-white"
-                disabled={isSubmitting || !redirectUrl || formSubmitEmailPlaceholder}
+                disabled={isSubmitting}
               >
                 {isSubmitting ? (
                   <>
@@ -113,7 +106,7 @@ export function ContactForm() {
                     Submitting...
                   </>
                 ) : (
-                  'Send Message'
+                  getText("contact_submit", language)
                 )}
               </Button>
             </div>
