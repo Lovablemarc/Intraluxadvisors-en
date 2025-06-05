@@ -28,81 +28,53 @@ export function ContactForm() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form
-          action="https://api.web3forms.com/submit"
-          method="POST"
-          onSubmit={handleFormSubmit}
-        >
+        <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
           <input type="hidden" name="access_key" value="5c688b0b-37fa-42af-b03a-0b5a5f000131" />
 
-          <input type="checkbox" name="botcheck" className="hidden" style={{display: "none"}} />
-
-          <div className="space-y-6">
-            <div>
-              <Label htmlFor="name" className="block text-sm font-medium mb-1">
-                {getText("contact_name", language)}
-              </Label>
-              <Input
-                type="text"
-                name="name"
-                id="name"
-                required
-                className="mt-1 block w-full"
-                placeholder="John Doe"
-                disabled={isSubmitting}
-                aria-label={getText("contact_name", language)}
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="email" className="block text-sm font-medium mb-1">
-                {getText("contact_email", language)}
-              </Label>
-              <Input
-                type="email"
-                name="email"
-                id="email"
-                required
-                className="mt-1 block w-full"
-                placeholder="you@example.com"
-                disabled={isSubmitting}
-                aria-label={getText("contact_email", language)}
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="message" className="block text-sm font-medium mb-1">
-                {getText("contact_message", language)}
-              </Label>
-              <Textarea
-                name="message"
-                id="message"
-                rows={3}
-                required
-                className="mt-1 block w-full"
-                placeholder="Your message..."
-                disabled={isSubmitting}
-                aria-label={getText("contact_message", language)}
-              />
-            </div>
-
-            <div>
-              <Button
-                type="submit"
-                className="w-full flex justify-center items-center bg-gold hover:bg-gold/90 text-white"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                    Submitting...
-                  </>
-                ) : (
-                  getText("contact_submit", language)
-                )}
-              </Button>
-            </div>
+          <div className="space-y-2">
+            <label htmlFor="name" className="block text-lg font-semibold text-gold">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Your Name"
+              className="w-full px-4 py-2 rounded-lg border border-gold focus:border-gold focus:ring-2 focus:ring-gold/50 bg-white text-darkText placeholder:text-gray-400 transition"
+            />
           </div>
+
+          <div className="space-y-2">
+            <label htmlFor="email" className="block text-lg font-semibold text-gold">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="Your Email"
+              className="w-full px-4 py-2 rounded-lg border border-gold focus:border-gold focus:ring-2 focus:ring-gold/50 bg-white text-darkText placeholder:text-gray-400 transition"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="message" className="block text-lg font-semibold text-gold">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              required
+              placeholder="Your Message"
+              rows={5}
+              className="w-full px-4 py-2 rounded-lg border border-gold focus:border-gold focus:ring-2 focus:ring-gold/50 bg-white text-darkText placeholder:text-gray-400 transition resize-none"
+            ></textarea>
+          </div>
+
+          <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
+          <button
+            type="submit"
+            className="w-full py-3 rounded-lg bg-gold text-white font-bold text-lg shadow-md hover:bg-gold/90 transition"
+          >
+            Submit Form
+          </button>
         </form>
       </CardContent>
     </Card>
