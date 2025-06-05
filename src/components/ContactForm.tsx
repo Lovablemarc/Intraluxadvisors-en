@@ -47,8 +47,8 @@ export function ContactForm() {
         >
           {/* FormSubmit.io hidden fields */}
           <input type="text" name="_formsubmit_id" style={{display:"none"}} />
-          {redirectUrl && <input type="hidden" name="_redirect" value={redirectUrl} />}
-          {/* It's recommended to enable CAPTCHA for production by setting value to "true" or removing this line */}
+          {redirectUrl && <input type="hidden\" name="_redirect\" value={redirectUrl} />}
+          {/* It's recommended to enable CAPTCHA for production by setting value to "true\" or removing this line */}
           <input type="hidden" name="_captcha" value="false" />
           {/* Optional: Define a subject for emails received via FormSubmit.io */}
           <input type="hidden" name="_subject" value={`New Contact Form Submission: ${name || 'N/A'}`} />
