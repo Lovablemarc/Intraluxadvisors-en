@@ -33,10 +33,8 @@ export function ContactForm() {
           method="POST"
           onSubmit={handleFormSubmit}
         >
-          {/* Replace with your Access Key */}
           <input type="hidden" name="access_key" value="5c688b0b-37fa-42af-b03a-0b5a5f000131" />
 
-          {/* Honeypot Spam Protection */}
           <input type="checkbox" name="botcheck" className="hidden" style={{display: "none"}} />
 
           <div className="space-y-6">
