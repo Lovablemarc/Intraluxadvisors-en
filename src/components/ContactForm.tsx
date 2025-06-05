@@ -11,11 +11,40 @@ import { getText } from '@/lib/translations';
 
 export function ContactForm() {
   const { language } = useLanguage();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Check if we have data to send
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      console.log('Form validation failed - missing required fields');
+      return;
+    }
+
     setIsSubmitting(true);
-    // Let the form submit naturally to formsubmit.io
+    
+    // Create form data and submit manually
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    fetch(form.action, {
+      method: 'POST',
+      body: formData
+    }).then(() => {
+      console.log('Form submitted successfully');
+      // Reset form
+      setName('');
+      setEmail('');
+      setMessage('');
+      setIsSubmitting(false);
+    }).catch((error) => {
+      console.error('Form submission error:', error);
+      setIsSubmitting(false);
+    });
   };
 
   return (
@@ -47,6 +76,8 @@ export function ContactForm() {
                 name="name"
                 id="name"
                 required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="mt-1 block w-full"
                 placeholder="John Doe"
                 disabled={isSubmitting}
@@ -63,6 +94,8 @@ export function ContactForm() {
                 name="email"
                 id="email"
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="mt-1 block w-full"
                 placeholder="you@example.com"
                 disabled={isSubmitting}
@@ -79,6 +112,8 @@ export function ContactForm() {
                 id="comment"
                 rows={3}
                 required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="mt-1 block w-full"
                 placeholder="Your message..."
                 disabled={isSubmitting}
