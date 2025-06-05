@@ -15,7 +15,7 @@ export function ContactForm() {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     setIsSubmitting(true);
-    // Let the form submit naturally to formsubmit.io
+    // Let the form submit naturally to web3forms
   };
 
   return (
@@ -30,12 +30,15 @@ export function ContactForm() {
       </CardHeader>
       <CardContent>
         <form
-          id="contactform"
-          action="https://formsubmit.io/send/put your unique code here"
+          action="https://api.web3forms.com/submit"
           method="POST"
           onSubmit={handleFormSubmit}
         >
-          <input name="_formsubmit_id" type="text" style={{display:"none"}} />
+          {/* Replace with your Access Key */}
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+
+          {/* Honeypot Spam Protection */}
+          <input type="checkbox" name="botcheck" className="hidden" style={{display: "none"}} />
 
           <div className="space-y-6">
             <div>
@@ -71,12 +74,12 @@ export function ContactForm() {
             </div>
 
             <div>
-              <Label htmlFor="comment" className="block text-sm font-medium mb-1">
+              <Label htmlFor="message" className="block text-sm font-medium mb-1">
                 {getText("contact_message", language)}
               </Label>
               <Textarea
-                name="comment"
-                id="comment"
+                name="message"
+                id="message"
                 rows={3}
                 required
                 className="mt-1 block w-full"
