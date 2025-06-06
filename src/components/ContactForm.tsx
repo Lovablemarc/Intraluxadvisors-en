@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import ContactForm from './ContactForm';
 import { Loader2 } from 'lucide-react';
 
 export default function ContactForm() {
