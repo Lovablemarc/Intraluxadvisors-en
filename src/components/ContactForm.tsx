@@ -1,10 +1,5 @@
-export default function ContactForm() {
-  return (
-    <form>
-      {/* form contents */}
-    </form>
-  );
-}
+import { useState } from 'react';
+import { Loader2 } from 'lucide-react';
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,8 +37,7 @@ export default function ContactForm() {
           ...formData
         })
       });
-      
-      // Reset form and show success
+
       setFormData({ name: '', email: '', message: '' });
       alert('Thank you! Your message has been sent successfully.');
     } catch (error) {
@@ -63,7 +57,7 @@ export default function ContactForm() {
           Fill out the form below and we'll get back to you.
         </p>
       </div>
-      
+
       <div className="p-6 pt-2">
         {/* Hidden Netlify form for form detection */}
         <div className="hidden">
