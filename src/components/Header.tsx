@@ -17,14 +17,14 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === "/" || location.pathname === "/";
+  const isHomePage = location.pathname === "/" || location.pathname === "/en";
 
   const navItems: NavItem[] = [
-    { id: "why", key: "nav_intrastat", path: "/#why" },
-    { id: "process", key: "nav_process", path: "/#process" },
-    { id: "b2b", key: "nav_b2b", path: "/#b2b" },
-    { id: "resources", key: "nav_resources", path: "/#resources" },
-    { id: "contact", key: "nav_contact", path: "/#contact" },
+    { id: "why", key: "nav_intrastat", path: "/en#why" },
+    { id: "process", key: "nav_process", path: "/en#process" },
+    { id: "b2b", key: "nav_b2b", path: "/en#b2b" },
+    { id: "resources", key: "nav_resources", path: "/en#resources" },
+    { id: "contact", key: "nav_contact", path: "/en#contact" },
   ];
 
   useEffect(() => {
