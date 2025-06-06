@@ -1,8 +1,15 @@
-// src/components/ContactForm.tsx
 import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import { Loader2 } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { useLanguage } from '@/lib/LanguageContext';
+import { getText } from '@/lib/translations';
 
-export default function ContactForm() {
+export function ContactForm() {
+  const { language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -22,6 +29,7 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Encode form data for Netlify
     const encode = (data) => {
       return Object.keys(data)
         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -37,7 +45,8 @@ export default function ContactForm() {
           ...formData
         })
       });
-
+      
+      // Reset form and show success
       setFormData({ name: '', email: '', message: '' });
       alert('Thank you! Your message has been sent successfully.');
     } catch (error) {
@@ -48,90 +57,92 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full shadow-xl bg-white rounded-lg border">
-      <div className="p-6 pb-4">
-        <h2 className="text-3xl font-bold text-center text-amber-600 mb-2">
-          Contact Us
-        </h2>
-        <p className="text-center text-gray-600">
-          Fill out the form below and we'll get back to you.
-        </p>
-      </div>
+    <>
+      {/* Hidden HTML form for Netlify form detection - CRITICAL */}
+      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+      </form>
 
-      <div className="p-6 pt-2">
-        <div className="hidden">
-          <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
-            <input name="name" />
-            <input name="email" />
-            <textarea name="message"></textarea>
-          </form>
-        </div>
+      <Card className="w-full shadow-xl bg-card text-card-foreground">
+        <CardHeader>
+          <CardTitle className="text-3xl font-headline text-center">
+            {getText("contact_title", language)}
+          </CardTitle>
+          <CardDescription className="text-center">
+            Fill out the form below and we'll get back to you.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-6">
+            {/* Honeypot field for spam protection */}
+            <div style={{ display: "none" }}>
+              <label>
+                Don't fill this out if you're human: 
+                <input name="bot-field" />
+              </label>
+            </div>
 
-        <div className="space-y-6">
-          <div className="space-y-2">
-            <label htmlFor="name" className="block text-lg font-semibold text-amber-600">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              required
-              value={formData.name}
-              onChange={handleInputChange}
-              placeholder="Your Name"
-              className="w-full px-4 py-2 rounded-lg border border-amber-600 focus:border-amber-600 focus:ring-2 focus:ring-amber-600/50 bg-white text-gray-800 placeholder:text-gray-400 transition outline-none"
-            />
+            <div className="space-y-2">
+              <label htmlFor="name" className="block text-lg font-semibold text-gold">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder="Your Name"
+                className="w-full px-4 py-2 rounded-lg border border-gold focus:border-gold focus:ring-2 focus:ring-gold/50 bg-white text-darkText placeholder:text-gray-400 transition"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="email" className="block text-lg font-semibold text-gold">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder="Your Email"
+                className="w-full px-4 py-2 rounded-lg border border-gold focus:border-gold focus:ring-2 focus:ring-gold/50 bg-white text-darkText placeholder:text-gray-400 transition"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="message" className="block text-lg font-semibold text-gold">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                required
+                value={formData.message}
+                onChange={handleInputChange}
+                placeholder="Your Message"
+                rows={5}
+                className="w-full px-4 py-2 rounded-lg border border-gold focus:border-gold focus:ring-2 focus:ring-gold/50 bg-white text-darkText placeholder:text-gray-400 transition resize-none"
+              />
+            </div>
+
+            <button
+              onClick={handleFormSubmit}
+              disabled={isSubmitting}
+              className="w-full py-3 rounded-lg bg-gold text-white font-bold text-lg shadow-md hover:bg-gold/90 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                'Submit Form'
+              )}
+            </button>
           </div>
-
-          <div className="space-y-2">
-            <label htmlFor="email" className="block text-lg font-semibold text-amber-600">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              required
-              value={formData.email}
-              onChange={handleInputChange}
-              placeholder="Your Email"
-              className="w-full px-4 py-2 rounded-lg border border-amber-600 focus:border-amber-600 focus:ring-2 focus:ring-amber-600/50 bg-white text-gray-800 placeholder:text-gray-400 transition outline-none"
-            />
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="message" className="block text-lg font-semibold text-amber-600">
-              Message
-            </label>
-            <textarea
-              name="message"
-              id="message"
-              required
-              value={formData.message}
-              onChange={handleInputChange}
-              placeholder="Your Message"
-              rows={5}
-              className="w-full px-4 py-2 rounded-lg border border-amber-600 focus:border-amber-600 focus:ring-2 focus:ring-amber-600/50 bg-white text-gray-800 placeholder:text-gray-400 transition resize-none outline-none"
-            />
-          </div>
-
-          <button
-            onClick={handleFormSubmit}
-            disabled={isSubmitting}
-            className="w-full py-3 rounded-lg bg-amber-600 text-white font-bold text-lg shadow-md hover:bg-amber-500 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-          >
-            {isSubmitting ? (
-              <>
-                <Loader2 className="h-4 w-4 animate-spin" />
-                Submitting...
-              </>
-            ) : (
-              'Submit Form'
-            )}
-          </button>
-        </div>
-      </div>
-    </div>
+        </CardContent>
+      </Card>
+    </>
   );
 }
