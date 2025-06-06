@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useLanguage } from '@/lib/LanguageContext';
 import { getText } from '@/lib/translations';
 
-export function ContactForm() {
+function ContactForm() {
   const { language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -29,7 +29,6 @@ export function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Encode form data for Netlify
     const encode = (data) => {
       return Object.keys(data)
         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -46,7 +45,6 @@ export function ContactForm() {
         })
       });
       
-      // Reset form and show success
       setFormData({ name: '', email: '', message: '' });
       alert('Thank you! Your message has been sent successfully.');
     } catch (error) {
@@ -58,7 +56,6 @@ export function ContactForm() {
 
   return (
     <>
-      {/* Hidden HTML form for Netlify form detection - CRITICAL */}
       <form name="contact" netlify netlify-honeypot="bot-field" hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
@@ -76,7 +73,6 @@ export function ContactForm() {
         </CardHeader>
         <CardContent>
           <div className="space-y-6">
-            {/* Honeypot field for spam protection */}
             <div style={{ display: "none" }}>
               <label>
                 Don't fill this out if you're human: 
@@ -146,3 +142,5 @@ export function ContactForm() {
     </>
   );
 }
+
+export default ContactForm;
