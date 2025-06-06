@@ -2,7 +2,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { getText } from "@/lib/translations";
 import SectionTitle from "./SectionTitle";
 import { Mail, Phone, MapPin, Languages } from "lucide-react";
-import { ContactForm } from "./ContactForm";
+import ContactForm from "./ContactForm"; // ✅ FIXED: Use default import without braces
 
 export default function ContactSection() {
   const { language } = useLanguage();
