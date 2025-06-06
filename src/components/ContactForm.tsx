@@ -1,5 +1,10 @@
-import ContactForm from './ContactForm';
-import { Loader2 } from 'lucide-react';
+export default function ContactForm() {
+  return (
+    <form>
+      {/* form contents */}
+    </form>
+  );
+}
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
