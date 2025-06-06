@@ -1,3 +1,4 @@
+// src/components/ContactForm.tsx
 import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 
@@ -21,7 +22,6 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Encode form data for Netlify
     const encode = (data) => {
       return Object.keys(data)
         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -59,7 +59,6 @@ export default function ContactForm() {
       </div>
 
       <div className="p-6 pt-2">
-        {/* Hidden Netlify form for form detection */}
         <div className="hidden">
           <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
             <input name="name" />
