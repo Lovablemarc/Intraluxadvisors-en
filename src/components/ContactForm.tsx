@@ -56,7 +56,7 @@ function ContactForm() {
 
   return (
     <>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <form name="contact" method="POST" data-netlify="true">
         <input type="text" name="name" />
         <input type="email" name="email" />
         <textarea name="message"></textarea>
