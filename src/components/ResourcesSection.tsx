@@ -13,7 +13,7 @@ export default function ResourcesSection() {
       icon: <FileText className="w-16 h-16 text-gold" />,
       titleKey: "resources_pdf",
       buttonKey: "resources_download",
-      link: "https://raw.githubusercontent.com/Lovablemarc/Intraluxadvisors-en/main/downloads/IntraluxAdvisors_Guide_EN.pdf",
+      link: "https://drive.google.com/file/d/1EpcFCjqu5q-_m_GaS6Dvln4tw17shnV-/view?usp=drive_link",
       filename: "IntraluxAdvisors_Guide.pdf",
       isDownload: true
     },
@@ -21,7 +21,7 @@ export default function ResourcesSection() {
       icon: <FileSpreadsheet className="w-16 h-16 text-gold" />,
       titleKey: "resources_excel",
       buttonKey: "resources_download",
-      link: "https://raw.githubusercontent.com/Lovablemarc/Intraluxadvisors-en/main/downloads/IntraluxAdvisors_CHECKLIST_EN.pdf",
+      link: "https://drive.google.com/file/d/1aqQu53Efvm6yxCOfnM9pW2yHVzHJq_Bl/view?usp=drive_link",
       filename: "IntraluxAdvisors_Checklist.pdf",
       isDownload: true
     },
