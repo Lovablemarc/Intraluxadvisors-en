@@ -1,10 +1,10 @@
-
 import { useLanguage } from "@/lib/LanguageContext";
 import { getText } from "@/lib/translations";
 import SectionTitle from "./SectionTitle";
 import GoldButton from "./GoldButton";
 import { toast } from "sonner";
 import { useState } from "react";
+import TestimonialsSection from "./TestimonialsSection";
 
 export default function ContactSection() {
   const { language } = useLanguage();
@@ -49,6 +49,7 @@ export default function ContactSection() {
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
         <SectionTitle title={getText("contact_title", language)} />
+        <TestimonialsSection />
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">

@@ -1,4 +1,3 @@
-
 import { useLanguage } from "@/lib/LanguageContext";
 import { getText } from "@/lib/translations";
 import GoldButton from "./GoldButton";
@@ -7,38 +6,27 @@ export default function HeroSection() {
   const { language } = useLanguage();
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center hero-pattern">
-      <div 
-        className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/80 to-white/90"
-        aria-hidden="true"
-      ></div>
-      
+    <section id="hero" className="relative min-h-[70vh] flex items-center bg-white">
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-3xl mx-auto md:mx-0">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-playfair">
-            {getText("hero_title", language)}
-          </h1>
-          <p className="text-xl md:text-2xl mb-10 text-gray-700">
-            {getText("hero_subtitle", language)}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <GoldButton 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              {getText("cta_quote", language)}
-            </GoldButton>
-            <GoldButton 
-              variant="outline"
-              onClick={() => document.getElementById('why')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              {getText("cta_learn", language)}
-            </GoldButton>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          {/* Left: Headline and subheadline */}
+          <div>
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-gray-900" style={{fontFamily: 'Inter, sans-serif'}}>
+              The finance<br />platform you<br />don't hate.
+            </h1>
+            <p className="text-base md:text-lg text-gray-700 mb-6 max-w-md">
+              Runway is the modern and intuitive way to model, plan, and align your business for everyone on your team.
+            </p>
+            {/* Optional: Add buttons here if needed */}
+          </div>
+          {/* Right: Rounded image */}
+          <div className="flex justify-center md:justify-end">
+            <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden shadow-lg border-4 border-white flex items-center justify-center bg-gray-100">
+              <img src="https://placehold.co/300x300?text=App+Preview" alt="App preview" className="object-cover w-full h-full" />
+            </div>
           </div>
         </div>
       </div>
-      
-      {/* Abstract gradient in bottom-right corner */}
-      <div className="absolute bottom-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-gold/10 rounded-full blur-3xl"></div>
     </section>
   );
 }
